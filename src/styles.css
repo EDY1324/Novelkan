@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode {
+  background-color: black;
+  color: #fff;
+}
+.dark-mode .novel-item {
+  background-color: #1e1e1e;
+  color: white;
+}
+.dark-mode .novel-item {
+  background-color: #333;
+  border: 1px solid #555;
+}

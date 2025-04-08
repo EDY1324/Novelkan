@@ -1,0 +1,20 @@
+<header>
+    <h1>Website Novel</h1>
+    <input type="text" (input)="search($event)" placeholder="Cari novel atau komik....">
+    <button (click)="goToFavorite()">⭐ Favorit</button>
+    <button (click)="toggleDarkMode()">{{ darkMode ? '☀️' : '🌙' }}</button>
+</header>
+  
+<div *ngIf="continueVisible" id="continueReading">
+  <p>📖 Lanjutkan membaca: <strong>{{ lastNovel }}</strong></p>
+  <button (click)="continueReading()">Lanjutkan</button>
+</div>
+  
+<main>
+    <div class="novel-list">
+      <div class="novel-item" *ngFor="let novel of filteredNovels" (click)="selectNovel(novel)">
+        <img [src]="novel.cover" [alt]="novel.title" />
+        <p>{{ novel.title }}</p>
+      </div>
+    </div>
+</main>

@@ -1,0 +1,27 @@
+<header>
+    <h1>{{ novelTitle }}</h1>
+    <button (click)="goBack()">⬅ Kembali</button>
+    <button (click)="toggleDarkMode()">{{ darkMode ? '☀️' : '🌙' }}</button>
+  </header>
+  
+  <div class="reading-settings">
+    <label for="fontSize">Ukuran Font:</label>
+    <select id="fontSize" [(ngModel)]="fontSize" (change)="updateFontSize()">
+      <option value="16px">Kecil</option>
+      <option value="20px">Sedang</option>
+      <option value="24px">Besar</option>
+    </select>
+  </div>
+  
+  <main>
+    <div class="progress-container">
+      <div class="progress-bar" [style.width.%]="progress"></div>
+    </div>
+    <h2>Chapter {{ currentChapter + 1 }}</h2>
+    <div id="novelContent" [ngStyle]="{ 'font-size': fontSize }" [innerHTML]="chapterHtml"></div>
+  </main>
+  
+  <div class="nav-buttons">
+    <button (click)="prevChapter()" [disabled]="currentChapter === 0">⬅ Chapter Sebelumnya</button>
+    <button (click)="nextChapter()" [disabled]="!hasNextChapter()">Chapter Selanjutnya ➡</button>
+  </div>
