@@ -7,8 +7,8 @@ header {
     color: white;
     position: sticky;
     top: 0;
-    width: 97.9%;
     z-index: 1000;
+    flex-wrap: wrap;
 }
 header h1 {
     margin: 0;
@@ -47,7 +47,9 @@ button:hover {
     text-align: center;
 }
 .novel-item img {
-    width: 100%;
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
     border-radius: 5px;
 }
 .novel-item p {
@@ -55,9 +57,10 @@ button:hover {
     margin: 10px 0;
 }
 .novel-item button {
-    background-color: red;
+    background-color: rgb(255, 21, 21);
     padding: 8px;
     font-size: 14px;
+    color: white;
 }
 .novel-item button:hover {
     background-color: darkred;
@@ -65,4 +68,48 @@ button:hover {
 .dark-mode {
     background-color: #121212;
     color: white;
+}
+@media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    header h1 {
+      font-size: 1.3em;
+    }
+    header button {
+        width: 100%;
+        margin: 5px 0;
+      }
+    #favoriteList {
+      flex-direction: column;
+      align-items: center;
+    }  
+    .novel-item {
+      width: 90%;
+      max-width: 300px;
+    }
+    .novel-item img {
+      max-height: 200px;
+      object-fit: cover;
+    }
+    .novel-item button {
+      width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    header h1 {
+      font-size: 1.1em;
+    }
+    button {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+    .novel-item {
+      padding: 12px;
+    }
+    .novel-item p {
+      font-size: 1rem;
+    }
 }

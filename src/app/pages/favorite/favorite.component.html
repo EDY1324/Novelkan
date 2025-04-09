@@ -11,6 +11,6 @@
     <div class="novel-item" *ngFor="let novel of favorites">
       <img [src]="novel.cover" [alt]="novel.title" />
       <p>{{ novel.title }}</p>
-      <button (click)="removeFavorite(novel.title)">❌ Hapus</button>
+      <button (click)="removeFavorite(novel.title)">🗑️ Hapus</button>
     </div>
   </main>

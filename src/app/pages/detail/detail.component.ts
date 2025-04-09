@@ -16,6 +16,7 @@ export class DetailComponent implements OnInit {
   selectedRating: number = 0;
   isFavorited: boolean = false;
   darkMode: boolean = false;
+  username: string = '';
 
   constructor(public router: Router) {}
 
@@ -53,8 +54,8 @@ export class DetailComponent implements OnInit {
   }
 
   submitReview(): void {
-    if (!this.reviewText || this.selectedRating === 0) {
-      alert('Harap isi ulasan dan beri rating.');
+    if (!this.username || !this.reviewText || this.selectedRating === 0) {
+      alert('Harap isi nama, ulasan, dan beri rating.');
       return;
     }
   
@@ -66,13 +67,15 @@ export class DetailComponent implements OnInit {
     }
   
     allReviews[novelTitle].push({
+      username: this.username,
       text: this.reviewText,
       rating: this.selectedRating
     });
-    
+  
     localStorage.setItem('novelReviews', JSON.stringify(allReviews));
     this.reviewText = '';
     this.selectedRating = 0;
+    this.username = '';
     this.loadReviews();
   }
 

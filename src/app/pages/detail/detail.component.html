@@ -11,7 +11,7 @@
   
       <button class="read" (click)="goToBaca()">Baca Sekarang</button>
       <button class="favorit" (click)="toggleFavorite()">
-        {{ isFavorited ? '✅ Favorit' : '⭐ Tambah ke Favorit' }}
+        <span [class.filled]="isFavorited">★</span> Favorit
       </button>
     </main>
   
@@ -21,11 +21,13 @@
         <span *ngFor="let star of [1,2,3,4,5]" (click)="selectRating(star)" 
               [style.color]="star <= selectedRating ? 'gold' : '#ddd'">★</span>
       </div>
+      <input type="text" [(ngModel)]="username" placeholder="Masukkan nama Anda" />
       <textarea [(ngModel)]="reviewText" placeholder="Tuliskan ulasan Anda..."></textarea>
       <button class="submit-review" (click)="submitReview()">Kirim Ulasan</button>
   
       <div *ngFor="let review of reviews; let i = index" class="review">
-        <p><strong>Rating: {{ '★'.repeat(review.rating) }}</strong></p>
+        <h4><strong>{{ review.username }}</strong></h4>
+        <p><strong>Rating: <span class="stars">{{ '★'.repeat(review.rating) }}</span></strong></p>
         <p>{{ review.text }}</p>
         <button (click)="editReview(i)">✏️</button>
         <button (click)="deleteReview(i)">🗑️</button>

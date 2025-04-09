@@ -7,8 +7,8 @@ header {
     color: white;
     position: sticky;
     top: 0;
-    width: 97.9%;
     z-index: 1000;
+    flex-wrap: wrap;
 }
 header h1 {
     margin: 0;
@@ -19,6 +19,7 @@ header input {
     border-radius: 5px;
     border: 1px solid #ddd;
     width: 250px;
+    margin: 10px 0;
 }
 header button {
     padding: 8px 12px;
@@ -28,6 +29,7 @@ header button {
     font-size: 1em;
     background-color: white;
     color: black;
+    margin: 5px;
 }
 header button:hover {
     background-color: lightgray;
@@ -68,3 +70,28 @@ header button:hover {
     font-weight: bold;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
+@media (max-width: 600px) {
+header {
+      flex-direction: column;
+      align-items: flex-start;
+    }  
+header input {
+      width: 95.5%;
+      margin: 10px 0;
+    }
+header button {
+      width: 100%;
+      margin: 5px 0;
+    }
+.novel-item {
+      width: 100%;
+      max-width: 300px;
+    }
+.novel-list {
+      flex-direction: column;
+      align-items: center;
+    }
+#continueReading {
+      width: 80%;
+    }
+}  
