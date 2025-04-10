@@ -7,12 +7,20 @@
   
     <main>
       <img [src]="novel?.cover" alt="{{ novel?.title }}" id="novelCover">
-      <p id="novelDescription">{{ novel?.description }}</p>
-  
-      <button class="read" (click)="goToBaca()">Baca Sekarang</button>
-      <button class="favorit" (click)="toggleFavorite()">
-        <span [class.filled]="isFavorited">★</span> Favorit
-      </button>
+      <div class="novel-info">
+        <p id="novelDescription">{{ novel?.description }}</p>
+        <p *ngIf="novel.genre?.length" class="novel-genre">
+          <strong>Genre:</strong>
+          <span *ngFor="let g of novel.genre; let last = last">
+            {{ g }}<span *ngIf="!last">, </span>
+          </span>
+        </p>
+    
+        <button class="read" (click)="goToBaca()">Baca Sekarang</button>
+        <button class="favorit" (click)="toggleFavorite()">
+          <span [class.filled]="isFavorited">★</span> Favorit
+        </button>
+      </div>
     </main>
   
     <section class="review-container">
@@ -26,11 +34,30 @@
       <button class="submit-review" (click)="submitReview()">Kirim Ulasan</button>
   
       <div *ngFor="let review of reviews; let i = index" class="review">
-        <h4><strong>{{ review.username }}</strong></h4>
-        <p><strong>Rating: <span class="stars">{{ '★'.repeat(review.rating) }}</span></strong></p>
-        <p>{{ review.text }}</p>
-        <button (click)="editReview(i)">✏️</button>
-        <button (click)="deleteReview(i)">🗑️</button>
+        <div class="review-header">
+          <div>
+            <strong>{{ review.username }}</strong>
+            <div class="stars">{{ '★'.repeat(review.rating) }}</div>
+          </div>
+          <div class="menu-container">
+            <button class="menu-toggle" (click)="toggleMenu(i)">⋮</button>
+            <div class="menu-options" *ngIf="activeMenuIndex === i">
+              <button (click)="editReview(i)">Edit</button>
+              <button (click)="deleteReview(i)">Hapus</button>
+            </div>
+          </div>
+        </div>
+        <p class="review-text">{{ review.text }}</p>
       </div>
     </section>
+    <div class="edit-popup" *ngIf="editingIndex !== null">
+      <div class="popup-content">
+        <h3>Edit Ulasan</h3>
+        <textarea [(ngModel)]="editingText"></textarea>
+        <div class="popup-buttons">
+          <button (click)="saveEditedReview()">Simpan</button>
+          <button (click)="cancelEdit()">Batal</button>
+        </div>
+      </div>
+    </div>
   </div>

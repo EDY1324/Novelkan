@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   novels = [
-    { title: "One Piece", cover: "https://upload.wikimedia.org/wikipedia/id/9/90/One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg", description: "Petualangan bajak laut yang bernama Luffy untuk mencari One Piece." },
-    { title: "Attack On Titan", cover: "https://upload.wikimedia.org/wikipedia/id/d/d6/Shingeki_no_Kyojin_manga_volume_1.jpg", description: "Pertempuran manusia melawan Titan yang ganas." },
-    { title: "Solo Leveling", cover: "https://upload.wikimedia.org/wikipedia/id/9/99/Solo_Leveling_Webtoon.png", description: "Seorang hunter lemah yang berubah menjadi yang terkuat." },
-    { title: "I Want to Eat Your Pancreas", cover: "https://upload.wikimedia.org/wikipedia/id/5/5d/Kimi_no_Suiz%C5%8D_o_Tabetai_cover.jpg", description: "I Want to Eat Your Pancreas adalah kisah tentang seorang siswa SMA yang menemukan teman sekelasnya menderita penyakit pankreas terminal." },
-    { title: "Before the Coffee Gets Cold", cover: "https://upload.wikimedia.org/wikipedia/en/9/9c/Before_the_Coffee_Gets_Cold_book_cover.webp", description: "Di gang sempit di Tokyo terdapat sebuah kafe bernama Funiculi Funicula. Di kafe tersebut, pelanggan memiliki kesempatan untuk melakukan perjalanan ke masa yang mereka pilih, selama mereka mengikuti sejumlah aturan." }
+    { title: "One Piece", cover: "https://upload.wikimedia.org/wikipedia/id/9/90/One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg", description: "Petualangan bajak laut yang bernama Luffy untuk mencari One Piece.", genre: ["Action", "Adventure", "Fantasy"]},
+    { title: "Attack On Titan", cover: "https://upload.wikimedia.org/wikipedia/id/d/d6/Shingeki_no_Kyojin_manga_volume_1.jpg", description: "Pertempuran manusia melawan Titan yang ganas.", genre: ["Action", "Drama", "Fantasy"]},
+    { title: "Solo Leveling", cover: "https://upload.wikimedia.org/wikipedia/id/9/99/Solo_Leveling_Webtoon.png", description: "Seorang hunter lemah yang berubah menjadi yang terkuat.", genre: ["Action", "Fantasy", "Modern"]},
+    { title: "I Want to Eat Your Pancreas", cover: "https://upload.wikimedia.org/wikipedia/id/5/5d/Kimi_no_Suiz%C5%8D_o_Tabetai_cover.jpg", description: "I Want to Eat Your Pancreas adalah kisah tentang seorang siswa SMA yang menemukan teman sekelasnya menderita penyakit pankreas terminal.", genre: ["Romance", "Drama", "Slice of Life"]},
+    { title: "Before the Coffee Gets Cold", cover: "https://upload.wikimedia.org/wikipedia/en/9/9c/Before_the_Coffee_Gets_Cold_book_cover.webp", description: "Di gang sempit di Tokyo terdapat sebuah kafe bernama Funiculi Funicula. Di kafe tersebut, pelanggan memiliki kesempatan untuk melakukan perjalanan ke masa yang mereka pilih, selama mereka mengikuti sejumlah aturan.", genre: ["Fantasy", "Drama", "Mystery"]}
   ];
   filteredNovels: any[] = [];
   darkMode = false;

@@ -17,6 +17,9 @@ export class DetailComponent implements OnInit {
   isFavorited: boolean = false;
   darkMode: boolean = false;
   username: string = '';
+  editingIndex: number | null = null;
+  editingText: string = '';
+  activeMenuIndex: number | null = null;
 
   constructor(public router: Router) {}
 
@@ -85,14 +88,29 @@ export class DetailComponent implements OnInit {
     this.reviews = allReviews[this.novel.title] || [];
   }
 
+  toggleMenu(index: number): void {
+    this.activeMenuIndex = this.activeMenuIndex === index ? null : index;
+  }
+
   editReview(index: number): void {
-    const newText = prompt('Edit Ulasan Anda:', this.reviews[index].text);
-    if (newText !== null) {
+    this.editingIndex = index;
+    this.editingText = this.reviews[index].text;
+  }
+
+  saveEditedReview(): void {
+    if (this.editingIndex !== null) {
       const allReviews = JSON.parse(localStorage.getItem('novelReviews') || '{}');
-      allReviews[this.novel.title][index].text = newText;
+      allReviews[this.novel.title][this.editingIndex].text = this.editingText;
       localStorage.setItem('novelReviews', JSON.stringify(allReviews));
+      this.editingIndex = null;
+      this.editingText = '';
       this.loadReviews();
     }
+  }
+
+  cancelEdit(): void {
+    this.editingIndex = null;
+    this.editingText = '';
   }
   
   deleteReview(index: number): void {
