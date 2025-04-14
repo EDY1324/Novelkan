@@ -125,11 +125,15 @@ export class DetailComponent implements OnInit {
   }
 
   goToBaca(): void {
+    setTimeout(() => {
     this.router.navigate(['/baca']);
+  }, 300);
   }
 
   goBack(): void {
+    setTimeout(() => {
     this.location.back();
+  }, 300);
   }
 
   checkFavorite(): void {

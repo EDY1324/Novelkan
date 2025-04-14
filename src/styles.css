@@ -50,6 +50,10 @@ header button:hover {
   background-color: #1e1e1e !important;
   color: #ffffff !important;
 }
+.dark-mode .favorit {
+  background-color: black !important;
+  color: #ffffff !important;
+}
 .dark-mode .inputText,
 .dark-mode textarea {
   background-color: #2b2b2b !important;

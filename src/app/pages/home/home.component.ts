@@ -63,7 +63,9 @@ export class HomeComponent implements OnInit {
 
   selectNovel(novel: any): void {
     localStorage.setItem('selectedNovel', JSON.stringify(novel));
+    setTimeout(() => {
     this.router.navigate(['/detail']);
+  }, 400);
   }
 
   continueReading(): void {
@@ -73,6 +75,8 @@ export class HomeComponent implements OnInit {
       chapter: chapterData[this.lastNovel]
     };
     localStorage.setItem('selectedNovel', JSON.stringify(data));
+    setTimeout(() => {
     this.router.navigate(['/baca']);
+    }, 400);
   }
 }
