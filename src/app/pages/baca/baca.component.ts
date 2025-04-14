@@ -38,8 +38,8 @@ export class BacaComponent implements OnInit {
 
     this.loadChapter();
 
-    this.darkMode = localStorage.getItem('darkMode') === 'enabled';
-    if (this.darkMode) document.body.classList.add('dark-mode');
+    this.darkMode = localStorage.getItem('darkMode') === 'true';
+    this.updateDarkModeClass();
   }
 
   loadChapter(): void {
@@ -79,8 +79,17 @@ export class BacaComponent implements OnInit {
 
   toggleDarkMode(): void {
     this.darkMode = !this.darkMode;
-    document.body.classList.toggle('dark-mode', this.darkMode);
-    localStorage.setItem('darkMode', this.darkMode ? 'enabled' : 'disabled');
+    localStorage.setItem('darkMode', this.darkMode.toString());
+    this.updateDarkModeClass();
+  }
+
+  updateDarkModeClass(): void {
+    const body = document.body;
+    if (this.darkMode) {
+      body.classList.add('dark-mode');
+    } else {
+      body.classList.remove('dark-mode');
+    }
   }
 
   updateFontSize(): void {

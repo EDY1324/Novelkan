@@ -48,14 +48,6 @@ header button {
     background: #ccc;
     cursor: not-allowed;
 }
-.dark-mode {
-    background-color: #121212;
-    color: white;
-}
-.dark-mode #novelContent {
-    background-color: #333;
-    border: 1px solid #555;
-}
 select {
     padding: 5px;
     border-radius: 5px;
@@ -67,7 +59,6 @@ select {
     justify-content: center;
     gap: 15px;
     padding: 10px;
-    background: #f4f4f4;
     border-bottom: 1px solid #ddd;
 }
 .progress-container {

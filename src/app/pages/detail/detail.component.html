@@ -29,7 +29,7 @@
         <span *ngFor="let star of [1,2,3,4,5]" (click)="selectRating(star)" 
               [style.color]="star <= selectedRating ? 'gold' : '#ddd'">★</span>
       </div>
-      <input type="text" [(ngModel)]="username" placeholder="Masukkan nama Anda" />
+      <input type="text" class="inputText" [(ngModel)]="username" placeholder="Masukkan nama Anda" />
       <textarea [(ngModel)]="reviewText" placeholder="Tuliskan ulasan Anda..."></textarea>
       <button class="submit-review" (click)="submitReview()">Kirim Ulasan</button>
   

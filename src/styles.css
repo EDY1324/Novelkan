@@ -10,6 +10,26 @@ body.dark-mode {
   background-color: black;
   color: #fff;
 }
+.dark-mode .review-container {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+.dark-mode .inputText,
+.dark-mode textarea {
+  background-color: #2b2b2b !important;
+  color: #fff !important;
+  border: 1px solid #444 !important;
+}
+.dark-mode .star {
+  color: #fdd835 !important;
+}
+.dark-mode .review {
+  background-color: #2b2b2b !important;
+  border: 1px solid #444 !important;
+}
+.dark-mode #continueReading {
+  background-color: #fff200 !important;
+}
 .dark-mode .novel-item {
   background-color: #1e1e1e;
   color: white;
@@ -17,4 +37,8 @@ body.dark-mode {
 .dark-mode .novel-item {
   background-color: #333;
   border: 1px solid #555;
+}
+.dark-mode #novelContent {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
 }

@@ -62,6 +62,7 @@ header button:hover {
 }
 #continueReading {
     background-color: #fffa90;
+    color: #333;
     padding: 15px;
     border-radius: 8px;
     margin: 15px auto;
