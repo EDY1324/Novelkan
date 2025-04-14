@@ -41,6 +41,11 @@ export class FavoriteComponent implements OnInit {
     }
   }
 
+  selectNovel(novel: any): void {
+    localStorage.setItem('selectedNovel', JSON.stringify(novel));
+    this.router.navigate(['/detail']);
+  }
+
   goBack(): void {
     this.router.navigate(['/']);
   }

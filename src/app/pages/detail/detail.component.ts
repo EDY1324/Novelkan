@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detail',
@@ -21,7 +22,10 @@ export class DetailComponent implements OnInit {
   editingText: string = '';
   activeMenuIndex: number | null = null;
 
-  constructor(public router: Router) {}
+  constructor(
+    public router: Router,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
     const data = localStorage.getItem('selectedNovel');
@@ -122,6 +126,10 @@ export class DetailComponent implements OnInit {
 
   goToBaca(): void {
     this.router.navigate(['/baca']);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
   checkFavorite(): void {

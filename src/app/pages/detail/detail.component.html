@@ -1,7 +1,7 @@
 <div [class.dark-mode]="darkMode">
     <header>
       <h1>{{ novel?.title }}</h1>
-      <button (click)="router.navigate(['/'])">⬅ Kembali</button>
+      <button (click)="goBack()">⬅ Kembali</button>
       <button (click)="toggleDarkMode()">{{ darkMode ? '☀️' : '🌙' }}</button>
     </header>
   
