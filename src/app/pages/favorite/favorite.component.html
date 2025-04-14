@@ -8,8 +8,8 @@
   
   <main id="favoriteList">
     <p *ngIf="favorites.length === 0">Tidak ada novel favorit.</p>
-    <div class="novel-item" *ngFor="let novel of favorites" (click)="selectNovel(novel)">
-      <img [src]="novel.cover" [alt]="novel.title" />
+    <div class="novel-item" *ngFor="let novel of favorites">
+      <img [src]="novel.cover" [alt]="novel.title" (click)="selectNovel(novel)" />
       <p>{{ novel.title }}</p>
       <button (click)="removeFavorite(novel.title)" class="delete">🗑️ Hapus</button>
     </div>
