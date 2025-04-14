@@ -10,6 +10,42 @@ body.dark-mode {
   background-color: black;
   color: #fff;
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: blue;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+header input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 250px;
+  margin: 10px 0;
+}
+header button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: white;
+  color: black;
+  margin: 5px;
+}
+header button:hover {
+  background-color: lightgray;
+}
 .dark-mode .review-container {
   background-color: #1e1e1e !important;
   color: #ffffff !important;
@@ -32,6 +68,9 @@ body.dark-mode {
 }
 .dark-mode .novel-item {
   background-color: #1e1e1e;
+  color: white;
+}
+.dark-mode .menu-toggle {
   color: white;
 }
 .dark-mode .novel-item {

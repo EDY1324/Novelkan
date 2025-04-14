@@ -1,27 +1,4 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: blue;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    flex-wrap: wrap;
-}
-header h1 {
-    margin: 0;
-    font-size: 1.5em;
-}
-header button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-button {
+.delete {
     background-color: #ffffff;
     border: none;
     padding: 10px 15px;
@@ -29,7 +6,7 @@ button {
     cursor: pointer;
     border-radius: 5px;
 }
-button:hover {
+.delete:hover {
     background-color: whitesmoke;
 }
 #favoriteList {
